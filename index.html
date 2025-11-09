@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minty Task Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <h1><span class="highlight">Minty</span> Task Manager</h1>
+
+    <div class="dashboard">
+      <span id="totalTasks">Total: 0</span>
+      <span id="pendingTasks">Pending: 0</span>
+      <span id="completedTasks">Completed: 0</span>
+    </div>
+
+    <form id="taskForm">
+      <input type="text" id="taskTitle" placeholder="Enter task..." required />
+      <label for="taskPriority">Priority:</label>
+      <select id="taskPriority" required>
+        <option value="high">High</option>
+        <option value="medium" selected>Medium</option>
+        <option value="low">Low</option>
+      </select>
+
+      <label for="taskDue">Due Date:</label>
+      <input type="datetime-local" id="taskDue" required />
+      
+      <button type="submit">Add Task</button>
+    </form>
+
+    <div class="filters">
+      <button data-filter="all" class="active">All</button>
+      <button data-filter="pending">Pending</button>
+      <button data-filter="completed">Completed</button>
+    </div>
+
+    <ul id="taskList"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
